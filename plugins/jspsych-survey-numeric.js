@@ -82,11 +82,11 @@
         'value':'Submit'
       }));
 
-      //close form
-      // display_element.append("</form>");
-
       $("#jspsych-survey-numeric-next").html('Submit Answers');
-      $("#jspsych-survey-numeric-next").click(function() {
+      $("#jspsych-survey-numeric-next").click(form.submit);
+
+      form.submit(function(event) {
+        event.preventDefault();
         // measure response time
         var endTime = (new Date()).getTime();
         var response_time = endTime - startTime;
