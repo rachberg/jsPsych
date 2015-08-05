@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="../jspsych.js"></script>
+    <script src="../plugins/jspsych-survey-numeric.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css"></link>
+    <link rel="stylesheet" href="../css/jspsych.css"></link>
+  </head>
+  <body>
+    <div id="jspsych-target"></div>
+  </body>
+  <script>
+
+  // defining groups of questions that will go together.
+  var page_1_questions = ["How old are you?", "What is your favorite number?"];
+  var page_2_questions = ["How many siblings do you have?"];
+
+  var survey_block = {
+      type: 'survey-numeric',
+      questions: [page_1_questions, page_2_questions],
+  };
+
+
+  jsPsych.init({
+    display_element: $('#jspsych-target'),
+    experiment_structure: [survey_block]
+  });
+
+
+  </script>
+</html>
